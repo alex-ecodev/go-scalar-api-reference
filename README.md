@@ -68,6 +68,7 @@ func main() {
 			SpecURL: "./docs/swagger.json", 
 			CustomOptions: scalar.CustomOptions{
 				PageTitle: "Simple API",
+				FavIcon:   "/static/favicon.ico",
 			},
 			DarkMode: true,
 		})

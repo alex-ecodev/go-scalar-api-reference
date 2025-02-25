@@ -122,6 +122,7 @@ type Options struct {
 
 type CustomOptions struct {
 	PageTitle string `json:"pageTitle,omitempty"`
+	FavIcon   string `json:"favIcon,omitempty"`
 }
 
 // DefaultOptions configures the default settings for API Reference options

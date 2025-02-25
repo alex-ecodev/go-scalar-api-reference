@@ -75,6 +75,14 @@ func ApiReferenceHTML(optionsInput *Options) (string, error) {
 		pageTitle = "Scalar API Reference"
 	}
 
+	var favIcon string
+
+	if options.CustomOptions.FavIcon != "" {
+		favIcon = options.CustomOptions.FavIcon
+	} else {
+		favIcon = ""
+	}
+
 	customThemeCss := CustomThemeCSS
 
 	if options.Theme != "" {
@@ -86,6 +94,7 @@ func ApiReferenceHTML(optionsInput *Options) (string, error) {
     <html>
       <head>
         <title>%s</title>
+		<link rel="icon" href="%s" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>%s</style>
@@ -95,5 +104,5 @@ func ApiReferenceHTML(optionsInput *Options) (string, error) {
         <script src="%s"></script>
       </body>
     </html>
-  `, pageTitle, customThemeCss, dataConfig, specContentHTML, options.CDN), nil
+  `, pageTitle, favIcon, customThemeCss, dataConfig, specContentHTML, options.CDN), nil
 }
